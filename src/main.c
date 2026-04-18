@@ -15,11 +15,9 @@ int main(void){
 
     SDL_Window *wd = SDL_CreateWindow("Window Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,  WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
     SDL_Renderer *ren = SDL_CreateRenderer(wd, -1, SDL_RENDERER_ACCELERATED);
-
+    SDL_SetRelativeMouseMode(SDL_TRUE);
     int running = 1;
     SDL_Event e;
-    
-    mat4_projection(P, deg2rad(60.0f),(float)WINDOW_WIDTH / WINDOW_HEIGHT, 0.1f, 100.0f);
     
     scene_t scene;
     scene_init(&scene);
@@ -28,6 +26,11 @@ int main(void){
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT)
                 running = 0;
+            if (e.type == SDL_MOUSEMOTION){
+                float sensitivity = 0.002f;
+                scene.camera.yaw   += e.motion.xrel * sensitivity;
+                scene.camera.pitch -= e.motion.yrel * sensitivity;
+            }
         }
         
         SDL_SetRenderDrawColor(ren, 0, 0, 0, 255); 

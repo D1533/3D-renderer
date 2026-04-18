@@ -2,13 +2,37 @@
 #include <string.h>
 #include "../include/math.h"
 
+float deg2rad(float deg){
+    return (deg * (PI /180.0f));
+}
 
 vec4_t vec3vec4(vec3_t v){
     vec4_t w = {v.x, v.y, v.z, 1.0f};
     return w;
 }
-float deg2rad(float deg){
-    return (deg * (PI /180.0f));
+
+vec3_t vec3_add(vec3_t u, vec3_t v){
+    return (vec3_t){u.x + v.x, u.y + v.y, u.z + v.z};
+}
+
+vec3_t vec3_sub(vec3_t u, vec3_t v){
+    return (vec3_t){u.x - v.x, u.y - v.y, u.z - v.z};
+}
+
+vec3_t vec3_scale(vec3_t u, float k){
+    return (vec3_t){u.x*k, u.y*k, u.z*k};
+}
+
+vec3_t vec3_cross(vec3_t u, vec3_t v){
+    return (vec3_t){u.y * v.z - u.z * v.y, u.z * v.x - u.x * v.z, u.x * v.y - u.y * v.x};
+}
+
+vec3_t vec3_normalize(vec3_t v)
+{
+    float len = sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
+    if (len == 0.0f)
+        return (vec3_t){0, 0, 0};
+    return (vec3_t)vec3_scale(v, 1/len);
 }
 
 void mat4_mul_vec4(const mat4_t A, const vec4_t* v, vec4_t* out){
@@ -105,32 +129,5 @@ void compute_model_matrix(vec3_t rotation, vec3_t translation, vec3_t scale, mat
     mat4_mul_mat4(Rxyz, S, RxyzS);
     mat4_mul_mat4(T, RxyzS, model_matrix);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

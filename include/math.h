@@ -30,6 +30,11 @@ typedef struct{
 float deg2rad(float deg);
 
 vec4_t vec3vec4(vec3_t v);
+vec3_t vec3_add(vec3_t u, vec3_t v);
+vec3_t vec3_sub(vec3_t u, vec3_t v);
+vec3_t vec3_scale(vec3_t u, float k);
+vec3_t vec3_cross(vec3_t u, vec3_t v);
+vec3_t vec3_normalize(vec3_t v);
 void mat4_identity(mat4_t A);
 void mat4_mul_vec4(const mat4_t A, const vec4_t* v, vec4_t* out);
 void mat4_mul_mat4(const mat4_t A, const mat4_t B, mat4_t result);

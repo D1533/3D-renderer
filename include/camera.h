@@ -13,6 +13,7 @@ typedef struct {
     float pitch;
 
     mat4_t view_matrix;
+    mat4_t projection_matrix;
 } camera_t;
 
 void camera_update(camera_t *cam);

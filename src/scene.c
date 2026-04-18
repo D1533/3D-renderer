@@ -4,6 +4,7 @@
 #include "../include/scene.h"
 #include "../include/camera.h"
 #include "../include/object.h"
+#include "../include/config.h"
 
 void scene_init(scene_t *scene){
     scene->count = 2;
@@ -20,10 +21,10 @@ void scene_init(scene_t *scene){
     transform.scale = (vec3_t){1, 1, 1};
     object_init(&scene->objects[1], "../assets/sphere.obj", transform); 
     
-
     camera_t cam = {{0,0,0},{0,0,0},{0,0,0},{0,0,0},0,0};
     mat4_identity(cam.view_matrix);
-
+    mat4_projection(cam.projection_matrix, deg2rad(60.0f),(float)WINDOW_WIDTH / WINDOW_HEIGHT, 0.1f, 100.0f);
+    
     scene->camera = cam;
 }
 
@@ -41,6 +42,6 @@ void scene_update(scene_t *scene){
 
 void scene_render(scene_t *scene, SDL_Renderer *ren){
     for (size_t i = 0; i < scene->count; i++){
-        render_object(ren, &scene->objects[i].mesh, scene->camera.view_matrix);
+        render_object(ren, &scene->objects[i].mesh, scene->camera);
     }
 }
