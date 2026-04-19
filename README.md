@@ -1,7 +1,8 @@
 
 ## 3D - Renderer from Scratch
 A from-scratch 3D renderer written in C using SDL2. This project implements a basic software rendering pipeline including camera movement, matrix transformations, OBJ loading, and rasterization concepts without using a GPU API (OpenGL/Vulkan).
-
+SDL2 is used solely as a windowing and display layer, while all rendering is implemented from scratch in software.
+The main goal of this project is to understand the mathematics behind 3D rendering.
 
 ## Features
 - Software-based 3D rendering (CPU rasterizer)
@@ -10,7 +11,7 @@ A from-scratch 3D renderer written in C using SDL2. This project implements a ba
 - Camera system with yaw/pitch control (FPS-style)
 - WASD movement + mouse look
 - Basic scene system with multiple objects
-- Custom math library (vectors, matrices)
+- Custom math library
 
 
 ## Project Structure
@@ -27,7 +28,6 @@ A from-scratch 3D renderer written in C using SDL2. This project implements a ba
 ├── build
 │   ├── camera.o
 │   ├── main.o
-│   ├── math.o
 │   ├── math_utils.o
 │   ├── object.o
 │   ├── obj_loader.o

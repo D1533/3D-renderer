@@ -15,22 +15,22 @@ void scene_init(scene_t *scene){
     transform.position = (vec3_t){-10, 0, -20};
     transform.rotation = (vec3_t){0, 1, 0};
     transform.scale = (vec3_t){2, 2, 2};
-    object_init(&scene->objects[0], "../assets/cube.obj", transform); 
+    object_init(&scene->objects[0], "../assets/models/cube.obj", transform); 
     
     transform.position = (vec3_t){0, 0, -20};
     transform.rotation = (vec3_t){0, 1, 0};
     transform.scale = (vec3_t){2, 2, 2};
-    object_init(&scene->objects[1], "../assets/icosaedron.obj", transform); 
+    object_init(&scene->objects[1], "../assets/models/icosaedron.obj", transform); 
    
     transform.position = (vec3_t){10, 0, -20};
     transform.rotation = (vec3_t){0, 1, 0};
     transform.scale = (vec3_t){2, 2, 2};
-    object_init(&scene->objects[2], "../assets/octaedron.obj", transform); 
+    object_init(&scene->objects[2], "../assets/models/octaedron.obj", transform); 
     
     transform.position = (vec3_t){0, 10, -20};
     transform.rotation = (vec3_t){0, 1, 0};
     transform.scale = (vec3_t){4, 4, 4};
-    object_init(&scene->objects[3], "../assets/sphere.obj", transform); 
+    object_init(&scene->objects[3], "../assets/models/sphere.obj", transform); 
     
 
     camera_t cam = {{0,0,0},{0,0,0},{0,0,0},{0,0,0},0,0};
