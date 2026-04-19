@@ -2,7 +2,7 @@
 #define RENDERER_H
 
 #include <SDL2/SDL.h>
-#include "math.h"
+#include "math_utils.h"
 #include "obj_loader.h"
 #include "camera.h"
 

@@ -1,14 +1,12 @@
 #include <math.h>
-#include <string.h>
-#include "../include/math.h"
+#include "../include/math_utils.h"
 
 float deg2rad(float deg){
     return (deg * (PI /180.0f));
 }
 
 vec4_t vec3vec4(vec3_t v){
-    vec4_t w = {v.x, v.y, v.z, 1.0f};
-    return w;
+    return (vec4_t){v.x, v.y, v.z, 1.0f};
 }
 
 vec3_t vec3_add(vec3_t u, vec3_t v){

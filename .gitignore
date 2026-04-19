@@ -1,4 +1,3 @@
 *.o
 *.py
-/build
 main

@@ -1,4 +1,4 @@
-#include "../include/math.h"
+#include "../include/math_utils.h"
 #include "../include/object.h"
 #include "../include/obj_loader.h"
 

@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include "../include/renderer.h"
 #include "../include/camera.h"
-#include "../include/math.h"
+#include "../include/math_utils.h"
 #include "../include/config.h"
 
 

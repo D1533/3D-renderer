@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../include/math.h"
+#include "../include/math_utils.h"
 
 
 int load_obj(const char *filename, mesh_t *mesh){

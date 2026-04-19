@@ -1,7 +1,7 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#include "math.h"
+#include "math_utils.h"
 
 typedef struct{
     vec3_t position;
