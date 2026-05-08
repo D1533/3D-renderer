@@ -8,10 +8,11 @@
 #include "../include/config.h"
 
 void scene_init(scene_t *scene){
-    scene->count = 4;
+    scene->count = 1;
     scene->objects = malloc(sizeof(object_t) * scene->count);
     transform_t transform;
     
+    /*
     transform.position = (vec3_t){-10, 0, -20};
     transform.rotation = (vec3_t){0, 1, 0};
     transform.scale = (vec3_t){2, 2, 2};
@@ -26,11 +27,11 @@ void scene_init(scene_t *scene){
     transform.rotation = (vec3_t){0, 1, 0};
     transform.scale = (vec3_t){2, 2, 2};
     object_init(&scene->objects[2], "../assets/models/octaedron.obj", transform); 
-    
+    */ 
     transform.position = (vec3_t){0, 10, -20};
-    transform.rotation = (vec3_t){0, 1, 0};
-    transform.scale = (vec3_t){4, 4, 4};
-    object_init(&scene->objects[3], "../assets/models/sphere.obj", transform); 
+    transform.rotation = (vec3_t){0, 0, 0};
+    transform.scale = (vec3_t){6, 6, 6};
+    object_init(&scene->objects[0], "../assets/models/sphere.obj", transform); 
     
 
     camera_t cam = {{0,0,0},{0,0,0},{0,0,0},{0,0,0},0,0};
